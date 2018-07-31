@@ -57,6 +57,8 @@ html {
     @media only screen and (min-width: 50em) {
       .playlist__song {
         padding: 2rem; } }
+    .playlist__song--active {
+      background-color: var(--color-main-font); }
     .playlist__song-details {
       display: flex;
       flex-direction: column; }

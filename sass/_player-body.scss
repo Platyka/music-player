@@ -43,6 +43,10 @@
       padding: 2rem;
     }
 
+    &--active {
+      background-color: var(--color-main-font);
+    }
+
     &-details {
       display: flex;
       flex-direction: column;
