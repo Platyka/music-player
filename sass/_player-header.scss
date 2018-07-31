@@ -1,0 +1,149 @@
+.player {
+  &__header {
+    background-color: var(--color-main);
+    position: relative;
+
+    display: grid;
+    grid-template-rows: 4fr 1fr 2fr 6px;
+
+    @include respond(small) {
+      grid-template-rows: 4fr 1fr 2fr 8px;
+    }
+
+    @include respond(medium) {
+      grid-template-rows: 4fr 1fr 2fr 12px;
+    }
+  }
+
+  &__search {
+    position: absolute;
+    top: 0;
+    left: -85%;
+    width: 100%;
+
+    &-input {
+      width: 85%;
+      border: none;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 1.4rem;
+      color: var(--color-secondary-dark);
+      border-bottom: 2px solid transparent;
+      transition: all .3s;
+
+      @include respond(medium) {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: solid 2px var(--color-secondary-dark);
+      }
+    }
+
+    &-icon {
+      color: var(--color-white);
+      font-size: 1.6rem;
+      padding-left: 1rem;
+
+      @include respond(medium) {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    color: var(--color-white);
+    font-size: 8rem;
+    align-self: center;
+    justify-self: center;
+
+    @include respond(small) {
+      font-size: 8.5rem;
+    }
+
+    @include respond(medium) {
+      font-size: 12rem;
+    }
+  }
+
+  &__current-song {
+    text-align: center;
+    align-self: end;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--color-white);
+
+    @include respond(small) {
+      font-size: 2rem;
+    }
+
+    @include respond(medium) {
+      font-size: 3rem;
+    }
+  }
+
+  &__control {
+    align-self: center;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &--playpause {
+      font-size: 3.5rem;
+      transition: all .3s ease;
+
+      @include respond(small) {
+        font-size: 3.7rem;
+      }
+
+      @include respond(medium) {
+        font-size: 5rem;
+      }
+    }
+
+    &--next,
+    &--previous {
+      font-size: 2.5rem;
+      transition: all .3s ease;
+
+      @include respond(small) {
+        font-size: 2.7rem;
+      }
+
+      @include respond(medium) {
+        font-size: 4rem;
+      }
+    }
+
+    &--playpause:hover,
+    &--next:hover,
+    &--previous:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  &__trackbar {
+    width: 100%;
+    background-color: transparent;
+
+    &--fill {
+      height: 6px;
+      width: 30%;
+      background-color: var(--color-secondary);
+      border-right: 3px solid var(--color-secondary);
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+
+      @include respond(small) {
+        height: 8px;
+      }
+
+      @include respond(medium) {
+        height: 12px;
+      }
+    }
+  }
+}

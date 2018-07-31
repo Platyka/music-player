@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+.app {
+  height: 100%; }
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, 50vh); }
+
+@media only screen and (min-width: 50rem) {
+  .container {
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 100vh; } }
+
+.player__body {
+  background-color: var(--color-white); }
+  .player__body-search {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--color-secondary-dark);
+    padding: 1rem 2rem;
+    font-family: inherit;
+    color: var(--color-secondary-dark);
+    font-size: 2rem;
+    height: 4.5rem;
+    display: none; }
+    @media only screen and (min-width: 50em) {
+      .player__body-search {
+        display: block; } }
+    .player__body-search:focus {
+      outline: none; }
+
+.playlist {
+  list-style: none;
+  height: calc(100% - 4.5rem);
+  overflow: scroll;
+  overflow-x: hidden; }
+  .playlist__song {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-line);
+    transition: all .5s ease; }
+    @media only screen and (min-width: 37.5em) {
+      .playlist__song {
+        padding: 2rem 6rem; } }
+    @media only screen and (min-width: 50em) {
+      .playlist__song {
+        padding: 2rem; } }
+    .playlist__song-details {
+      display: flex;
+      flex-direction: column; }
+      .playlist__song-details--title {
+        font-size: 1.4rem;
+        color: var(--color-secondary-dark); }
+        @media only screen and (min-width: 37.5em) {
+          .playlist__song-details--title {
+            font-size: 1.7rem; } }
+        @media only screen and (min-width: 50em) {
+          .playlist__song-details--title {
+            font-size: 2.2rem; } }
+      .playlist__song-details--artist {
+        font-size: 1.2rem;
+        color: var(--color-artist); }
+        @media only screen and (min-width: 37.5em) {
+          .playlist__song-details--artist {
+            font-size: 1.5rem; } }
+        @media only screen and (min-width: 50em) {
+          .playlist__song-details--artist {
+            font-size: 2rem;
+            padding-top: 1rem; } }
+    .playlist__song-duration {
+      color: var(--color-secondary-dark);
+      font-size: 1.4rem;
+      align-self: center; }
+      @media only screen and (min-width: 37.5em) {
+        .playlist__song-duration {
+          font-size: 1.7rem; } }
+      @media only screen and (min-width: 50em) {
+        .playlist__song-duration {
+          font-size: 2.2rem; } }
+    .playlist__song:hover {
+      background-color: var(--color-main-font); }
+
+.player__header {
+  background-color: var(--color-main);
+  position: relative;
+  display: grid;
+  grid-template-rows: 4fr 1fr 2fr 6px; }
+  @media only screen and (min-width: 37.5em) {
+    .player__header {
+      grid-template-rows: 4fr 1fr 2fr 8px; } }
+  @media only screen and (min-width: 50em) {
+    .player__header {
+      grid-template-rows: 4fr 1fr 2fr 12px; } }
+
+.player__search {
+  position: absolute;
+  top: 0;
+  left: -85%;
+  width: 100%; }
+  .player__search-input {
+    width: 85%;
+    border: none;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: var(--color-secondary-dark);
+    border-bottom: 2px solid transparent;
+    transition: all .3s; }
+    @media only screen and (min-width: 50em) {
+      .player__search-input {
+        display: none; } }
+    .player__search-input:focus {
+      outline: none;
+      border-bottom: solid 2px var(--color-secondary-dark); }
+  .player__search-icon {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    padding-left: 1rem; }
+    @media only screen and (min-width: 50em) {
+      .player__search-icon {
+        display: none; } }
+
+.player__icon {
+  color: var(--color-white);
+  font-size: 8rem;
+  align-self: center;
+  justify-self: center; }
+  @media only screen and (min-width: 37.5em) {
+    .player__icon {
+      font-size: 8.5rem; } }
+  @media only screen and (min-width: 50em) {
+    .player__icon {
+      font-size: 12rem; } }
+
+.player__current-song {
+  text-align: center;
+  align-self: end;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-white); }
+  @media only screen and (min-width: 37.5em) {
+    .player__current-song {
+      font-size: 2rem; } }
+  @media only screen and (min-width: 50em) {
+    .player__current-song {
+      font-size: 3rem; } }
+
+.player__control {
+  align-self: center;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; }
+  .player__control--playpause {
+    font-size: 3.5rem;
+    transition: all .3s ease; }
+    @media only screen and (min-width: 37.5em) {
+      .player__control--playpause {
+        font-size: 3.7rem; } }
+    @media only screen and (min-width: 50em) {
+      .player__control--playpause {
+        font-size: 5rem; } }
+  .player__control--next, .player__control--previous {
+    font-size: 2.5rem;
+    transition: all .3s ease; }
+    @media only screen and (min-width: 37.5em) {
+      .player__control--next, .player__control--previous {
+        font-size: 2.7rem; } }
+    @media only screen and (min-width: 50em) {
+      .player__control--next, .player__control--previous {
+        font-size: 4rem; } }
+  .player__control--playpause:hover, .player__control--next:hover, .player__control--previous:hover {
+    transform: scale(1.1);
+    cursor: pointer; }
+
+.player__trackbar {
+  width: 100%;
+  background-color: transparent; }
+  .player__trackbar--fill {
+    height: 6px;
+    width: 30%;
+    background-color: var(--color-secondary);
+    border-right: 3px solid var(--color-secondary);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px; }
+    @media only screen and (min-width: 37.5em) {
+      .player__trackbar--fill {
+        height: 8px; } }
+    @media only screen and (min-width: 50em) {
+      .player__trackbar--fill {
+        height: 12px; } }
+
+body {
+  font-family: "Montserrat", sans-serif; }
+
+:root {
+  --color-main: #2ecc71;
+  --color-main-dark: #27ae60;
+  --color-secondary: #34495e;
+  --color-secondary-dark: #2c3e50;
+  --color-main-font: #ecf0f1;
+  --color-line: #95a5a6;
+  --color-artist: #7f8c8d;
+  --color-white: #fff; }

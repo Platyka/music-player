@@ -1,0 +1,96 @@
+.player__body {
+  background-color: var(--color-white);
+
+  &-search {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--color-secondary-dark);
+    padding: 1rem 2rem;
+    font-family: inherit;
+    color: var(--color-secondary-dark);
+    font-size: 2rem;
+    height: 4.5rem;
+    display: none;
+
+    @include respond(medium) {
+      display: block;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.playlist {
+  list-style: none;
+  height: calc(100% - 4.5rem);
+  overflow: scroll;
+  overflow-x: hidden;
+
+  &__song {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-line);
+    transition: all .5s ease;
+
+    @include respond(small) {
+      padding: 2rem 6rem;
+    }
+
+    @include respond(medium) {
+      padding: 2rem;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+
+      &--title {
+        font-size: 1.4rem;
+        color: var(--color-secondary-dark);
+
+        @include respond(small) {
+          font-size: 1.7rem;
+        }
+
+        @include respond(medium) {
+          font-size: 2.2rem;
+        }
+      }
+
+      &--artist {
+        font-size: 1.2rem;
+        color: var(--color-artist);
+
+        @include respond(small) {
+          font-size: 1.5rem;
+        }
+
+        @include respond(medium) {
+          font-size: 2rem;
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    &-duration {
+      color: var(--color-secondary-dark);
+      font-size: 1.4rem;
+      align-self: center;
+
+      @include respond(small) {
+        font-size: 1.7rem;
+      }
+
+      @include respond(medium) {
+        font-size: 2.2rem;
+      }
+    }
+
+    &:hover {
+      background-color: var(--color-main-font);
+    }
+  }
+}
