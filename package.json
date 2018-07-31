@@ -1,0 +1,21 @@
+{
+  "name": "musicplayer",
+  "version": "1.0.0",
+  "description": "Vanilla Music Player",
+  "main": "js/app.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/styles.css -w",
+    "compile:sass": "node-sass sass/main.scss css/styles.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/styles.comp.css -o css/styles.prefix.css",
+    "compress:css": "node-sass css/styles.prefix.css css/styles.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Atti",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.0.2",
+    "node-sass": "^4.9.2",
+    "npm-run-all": "^4.1.3",
+    "postcss-cli": "^6.0.0"
+  }
+}
