@@ -4,14 +4,14 @@
     position: relative;
 
     display: grid;
-    grid-template-rows: 4fr 1fr 2fr 6px;
+    grid-template-rows: 4fr 1fr 2fr .5fr 6px;
 
     @include respond(small) {
-      grid-template-rows: 4fr 1fr 2fr 8px;
+      grid-template-rows: 4fr 1fr 2fr .5fr 8px;
     }
 
     @include respond(medium) {
-      grid-template-rows: 4fr 1fr 2fr 12px;
+      grid-template-rows: 4fr 1fr 2fr .5fr 12px;
     }
   }
 
@@ -20,6 +20,13 @@
     top: 0;
     left: -85%;
     width: 100%;
+    transition: all .2s ease-in;
+    display: flex;
+    align-items: center;
+
+    &--active {
+      left: 0;
+    }
 
     &-input {
       width: 85%;
@@ -42,9 +49,23 @@
     }
 
     &-icon {
+      display: inline-block;
+    }
+
+    &-btn {
       color: var(--color-white);
       font-size: 1.6rem;
       padding-left: 1rem;
+      transition: all .3s;
+
+      &--times {
+        font-size: 2rem;
+      }
+
+      &:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+      }
 
       @include respond(medium) {
         display: none;
@@ -125,13 +146,32 @@
     }
   }
 
+  &__timer {
+    color: var(--color-white);
+    justify-self: right;
+    align-self: center;
+    padding-right: 1rem;
+    font-size: 1.2rem;
+
+    @include respond(small) {
+      font-size: 1.4rem;
+      padding-right: 2rem;
+      // padding-bottom: 2rem;
+    }
+
+    @include respond(medium) {
+      font-size: 1.6rem;
+      // padding-bottom: 1rem;
+    }
+  }
+
   &__trackbar {
     width: 100%;
     background-color: transparent;
 
     &--fill {
       height: 6px;
-      width: 30%;
+      width: 0;
       background-color: var(--color-secondary);
       border-right: 3px solid var(--color-secondary);
       border-top-right-radius: 100px;

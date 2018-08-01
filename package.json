@@ -5,7 +5,7 @@
   "main": "js/app.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/styles.css -w",
-    "compile:sass": "node-sass sass/main.scss css/styles.css",
+    "compile:sass": "node-sass sass/main.scss css/styles.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/styles.comp.css -o css/styles.prefix.css",
     "compress:css": "node-sass css/styles.prefix.css css/styles.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
